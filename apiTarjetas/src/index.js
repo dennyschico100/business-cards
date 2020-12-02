@@ -1,9 +1,9 @@
-import express from "express";
-import morgan from "morgan";
+const app= require("./app");
 
-const app = new express();
+const main=()=>{
+    app.listen(app.get("PORT"),()=>{
+        console.log(`running on ${app.get("PORT")}`);
+    })
+}
 
-app.use(morgan("dev"));
-app.listen(3000);
-
-console.log('running on 3000');
+main();
